@@ -1,10 +1,9 @@
-const { exec } = require('child_process');
+const { execSync } = require('child_process');
 
-exec('git config --get remote.origin.url', (err, githubUrl) => {
-  if (err) {
-    console.error(err);
-    return;
-  }
+const printGithubUrl = () => {
+  return execSync('git config --get remote.origin.url', {
+    encoding: 'utf8'
+  }).trim();
+};
 
-  console.log(githubUrl);
-});
+module.exports = printGithubUrl;

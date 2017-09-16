@@ -5,17 +5,26 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jkup/pullit.git"
   },
-  "keywords": ["github", "pull", "request", "pr", "cli"],
+  "keywords": [
+    "github",
+    "pull",
+    "request",
+    "pr",
+    "cli"
+  ],
   "author": "Jon Kuperman",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jkup/pullit/issues"
   },
-  "homepage": "https://github.com/jkup/pullit#readme"
+  "homepage": "https://github.com/jkup/pullit#readme",
+  "devDependencies": {
+    "jest": "^21.1.0"
+  }
 }
