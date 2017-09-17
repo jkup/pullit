@@ -20,6 +20,7 @@
   ],
   "author": "Jon Kuperman",
   "license": "MIT",
+  "bin": "./bin/pullit.js",
   "bugs": {
     "url": "https://github.com/jkup/pullit/issues"
   },
@@ -30,6 +31,7 @@
   "dependencies": {
     "cli-table2": "^0.2.0",
     "github": "^11.0.0",
-    "parse-github-repo-url": "^1.4.1"
+    "parse-github-repo-url": "^1.4.1",
+    "yargs": "^8.0.2"
   }
 }
