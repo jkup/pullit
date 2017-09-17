@@ -10,9 +10,11 @@ const display = () => {
 
   getResults.then(results => {
     results.data.forEach(element => {
-      table.push([element.id, element.title]);
+      table.push([element.number, element.title]);
     });
 
     console.log(table.toString());
   });
 };
+
+module.exports = display;
