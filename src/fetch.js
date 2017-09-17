@@ -11,8 +11,8 @@ const generateGithubUrl = () => {
 const fetch = id => {
   return github.pullRequests
     .get({
-      owner: 'facebook',
-      repo: 'react',
+      owner: parseGithubUrl.owner,
+      repo: parseGithubUrl.repo
       number: id
     })
     .then(res => {
