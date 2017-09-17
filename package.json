@@ -26,5 +26,8 @@
   "homepage": "https://github.com/jkup/pullit#readme",
   "devDependencies": {
     "jest": "^21.1.0"
+  },
+  "dependencies": {
+    "github": "^11.0.0"
   }
 }
