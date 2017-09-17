@@ -28,6 +28,7 @@
     "jest": "^21.1.0"
   },
   "dependencies": {
+    "chalk": "^2.1.0",
     "github": "^11.0.0"
   }
 }
