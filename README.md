@@ -28,4 +28,8 @@ pullit
 
 ## Fetch PR branch
 
-TODO
+First run `pullit` and then pick an ID from the table and run
+
+```
+pullit fetch id
+```
