@@ -1,16 +1,13 @@
-const Table = require('cli-table2');
-const fetchRequests = require('./fetchRequests');
+const display = require('./display');
+const fetch = require('./fetch');
 
-const getResults = fetchRequests();
+const pullit = (command, id) => {
+  console.log(command);
+  if (command === 'fetch') {
+    console.log(fetch(id));
+  } else {
+    display();
+  }
+};
 
-const table = new Table({
-  head: ['ID', 'Title']
-});
-
-getResults.then(results => {
-  results.data.forEach(element => {
-    table.push([element.id, element.title]);
-  });
-
-  console.log(table.toString());
-});
+module.exports = pullit;

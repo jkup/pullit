@@ -1,11 +1,12 @@
 const github = require('./github');
 const parseGithubUrl = require('./parseGithubUrl');
 
-const fetchRequests = () => {
-  return github.pullRequests.getAll({
+const fetch = id => {
+  return github.pullRequests.get({
     owner: parseGithubUrl.owner,
-    repo: parseGithubUrl.repo
+    repo: parseGithubUrl.repo,
+    number: id
   });
 };
 
-module.exports = fetchRequests;
+module.exports = fetch;
