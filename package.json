@@ -28,6 +28,6 @@
     "jest": "^21.1.0"
   },
   "dependencies": {
-    "octonode": "^0.8.0"
+    "github": "^11.0.0"
   }
 }
