@@ -18,7 +18,7 @@ const fetch = id => {
     .then(res => {
       const branch = res.data.head.ref;
       execSync(
-        `git fetch origin pull/${id}/head:${branch} && checkout ${branch}`
+        `git fetch origin pull/${id}/head:${branch} && git checkout ${branch}`
       );
     });
 };
