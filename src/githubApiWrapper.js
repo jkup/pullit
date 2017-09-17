@@ -11,7 +11,8 @@ github.pullRequests.getAll(
     repo: parseGithubUrl.repo
   },
   (err, res) => {
-    console.log(err);
-    console.log(res);
+    res.data.forEach(request => {
+      console.log(request.id, request.title);
+    });
   }
 );
