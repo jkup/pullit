@@ -1,11 +1,9 @@
-const { URL } = require('url');
+const parse = require('parse-github-repo-url');
 const generateGithubUrl = require('./generateGithubUrl');
 
-const fullPath = new URL(generateGithubUrl());
-
-const pathToArray = fullPath.pathname.split('/');
+const fullPath = parse(generateGithubUrl());
 
 module.exports = {
-  owner: pathToArray[1],
-  repo: pathToArray[2].split('.')[0]
+  owner: fullPath[0],
+  repo: fullPath[1]
 };
