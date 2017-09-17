@@ -12,7 +12,7 @@ const fetch = id => {
   return github.pullRequests
     .get({
       owner: parseGithubUrl.owner,
-      repo: parseGithubUrl.repo
+      repo: parseGithubUrl.repo,
       number: id
     })
     .then(res => {
