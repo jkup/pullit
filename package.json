@@ -28,7 +28,7 @@
     "jest": "^21.1.0"
   },
   "dependencies": {
-    "chalk": "^2.1.0",
+    "cli-table2": "^0.2.0",
     "github": "^11.0.0"
   }
 }
