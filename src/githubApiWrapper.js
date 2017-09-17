@@ -1,4 +1,5 @@
 const GitHubApi = require('github');
+const parseGithubUrl = require('./parseGithubUrl');
 
 const github = new GitHubApi({
   debug: true
@@ -6,8 +7,8 @@ const github = new GitHubApi({
 
 github.pullRequests.getAll(
   {
-    owner: 'facebook',
-    repo: 'react'
+    owner: parseGithubUrl.owner,
+    repo: parseGithubUrl.repo
   },
   (err, res) => {
     console.log(err);
