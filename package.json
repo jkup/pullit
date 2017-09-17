@@ -1,6 +1,6 @@
 {
   "name": "pullit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Display and pull branches from GitHub pull requests",
   "main": "src/index.js",
   "scripts": {
@@ -11,13 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/jkup/pullit.git"
   },
-  "keywords": [
-    "github",
-    "pull",
-    "request",
-    "pr",
-    "cli"
-  ],
+  "keywords": ["github", "pull", "request", "pr", "cli"],
   "author": "Jon Kuperman",
   "license": "MIT",
   "bin": "./bin/pullit.js",
