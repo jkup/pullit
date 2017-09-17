@@ -1,8 +1,9 @@
 {
   "name": "pullit",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Display and pull branches from GitHub pull requests",
   "main": "src/index.js",
+  "preferGlobal": true,
   "scripts": {
     "start": "node src/index.js",
     "test": "jest"
