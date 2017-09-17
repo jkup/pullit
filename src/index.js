@@ -4,8 +4,7 @@ const fetchRequests = require('./fetchRequests');
 const getResults = fetchRequests();
 
 const table = new Table({
-  head: ['ID', 'Title'],
-  colWidths: [100, 100]
+  head: ['ID', 'Title']
 });
 
 getResults.then(results => {
