@@ -1,6 +1,6 @@
 {
   "name": "pullit",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Display and pull branches from GitHub pull requests",
   "main": "src/index.js",
   "preferGlobal": true,
@@ -15,7 +15,9 @@
   "keywords": ["github", "pull", "request", "pr", "cli"],
   "author": "Jon Kuperman",
   "license": "MIT",
-  "bin": "./bin/pullit.js",
+  "bin": {
+    "pullit": "./bin/pullit.js"
+  },
   "bugs": {
     "url": "https://github.com/jkup/pullit/issues"
   },
