@@ -8,13 +8,17 @@ const display = () => {
     head: ['ID', 'Title']
   });
 
-  getResults.then(results => {
-    results.data.forEach(element => {
-      table.push([element.number, element.title]);
-    });
+  getResults
+    .then(results => {
+      results.data.forEach(element => {
+        table.push([element.number, element.title]);
+      });
 
-    console.log(table.toString());
-  });
+      console.log(table.toString());
+    })
+    .catch(err => {
+      console.log(err);
+    });
 };
 
 module.exports = display;

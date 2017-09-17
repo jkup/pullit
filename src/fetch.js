@@ -20,6 +20,9 @@ const fetch = id => {
       execSync(
         `git fetch origin pull/${id}/head:${branch} && git checkout ${branch}`
       );
+    })
+    .catch(err => {
+      console.log(err);
     });
 };
 
