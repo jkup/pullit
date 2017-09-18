@@ -12,13 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/jkup/pullit.git"
   },
-  "keywords": [
-    "github",
-    "pull",
-    "request",
-    "pr",
-    "cli"
-  ],
+  "keywords": ["github", "pull", "request", "pr", "cli"],
   "author": "Jon Kuperman",
   "license": "MIT",
   "bin": {
@@ -36,5 +30,11 @@
     "cli-table2": "^0.2.0",
     "github": "^11.0.0",
     "parse-github-repo-url": "^1.4.1"
+  },
+  "jest": {
+    "collectCoverageFrom": ["src/**/*.js"],
+    "testEnvironment": "node",
+    "modulePathIgnorePatterns": ["__tests__/fixtures/"],
+    "testPathIgnorePatterns": ["__tests__/fixtures/"]
   }
 }

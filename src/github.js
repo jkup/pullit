@@ -10,10 +10,6 @@ class GitHub {
   }
 
   init() {
-    this.parseGithubUrl();
-  }
-
-  parseGithubUrl() {
     const fullPath = parse(this.generateGithubUrl());
 
     (this.owner = fullPath[0]), (this.repo = fullPath[1]);
