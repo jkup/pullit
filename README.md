@@ -16,14 +16,12 @@ yarn global add pullit
 
 ## Usage
 
-### Display Open PRs
-
 From within any repo:
 
 ```
 pullit
 ```
 
-![screen shot 2017-09-16 at 9 35 44 pm](https://user-images.githubusercontent.com/490294/30518034-211be096-9b27-11e7-8c39-886daa1ce5d8.png)
+![screen shot 2017-09-17 at 9 43 22 pm](https://user-images.githubusercontent.com/490294/30529394-c4dce642-9bf1-11e7-877e-cfbc11b9fe6a.png)
 
 Then simply select a branch to fetch it down and check it out.
