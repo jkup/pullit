@@ -1,11 +1,12 @@
-const display = require('./display');
-const fetch = require('./fetch');
+const GitHub = require('./github');
 
 const pullit = (command, id) => {
+  const github = new GitHub();
+
   if (command === 'fetch') {
-    fetch(id);
+    github.fetch(id);
   } else {
-    display();
+    github.display();
   }
 };
 
