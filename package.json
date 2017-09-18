@@ -12,7 +12,13 @@
     "type": "git",
     "url": "git+https://github.com/jkup/pullit.git"
   },
-  "keywords": ["github", "pull", "request", "pr", "cli"],
+  "keywords": [
+    "github",
+    "pull",
+    "request",
+    "pr",
+    "cli"
+  ],
   "author": "Jon Kuperman",
   "license": "MIT",
   "bin": {
@@ -23,7 +29,8 @@
   },
   "homepage": "https://github.com/jkup/pullit#readme",
   "devDependencies": {
-    "jest": "^21.1.0"
+    "jest": "^21.1.0",
+    "proxyquire": "^1.8.0"
   },
   "dependencies": {
     "cli-table2": "^0.2.0",
