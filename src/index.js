@@ -3,10 +3,13 @@ const GitHub = require('./github');
 const pullit = (command, id) => {
   const github = new GitHub();
 
-  if (command === 'fetch') {
-    github.fetch(id);
-  } else {
-    github.display();
+  switch (command) {
+    case 'fetch':
+      github.fetch(id);
+      break;
+    default:
+      github.display();
+      break;
   }
 };
 
