@@ -1,15 +1,6 @@
-const proxyquire = require('proxyquire');
+const Pullit = require('../index');
+const pullit = new Pullit();
 
-const GitHub = proxyquire('../github.js', {
-  child_process: {
-    execSync: () => {
-      return 'foobar';
-    }
-  }
-});
-
-test('index prints github url', () => {
-  const github = new GitHub();
-
-  expect(github.generateGithubUrl()).toBe('https://github.com/jkup/pullit.git');
+test('initial test', () => {
+  expect(pullit).toBeInstanceOf(Pullit);
 });
