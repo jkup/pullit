@@ -1,24 +1,41 @@
 const GitHubApi = require('github');
 const Menu = require('terminal-menu');
-const { execSync } = require('child_process');
+const {
+  execSync
+} = require('child_process');
 const parse = require('parse-github-repo-url');
 
 class Pullit {
   constructor() {
-    this.github = new GitHubApi({});
     this.init();
+    this.hostname = 'api.github.com';
+    this.github = new GitHubApi({
+      hostname: this.hostname
+    });
   }
 
   init() {
-    const fullPath = parse(this.generateGithubUrl());
-
-    (this.owner = fullPath[0]), (this.repo = fullPath[1]);
-  }
-
-  generateGithubUrl() {
-    return execSync(`git config --get remote.origin.url`, {
+    const url = execSync(`git config --get remote.origin.url`, {
       encoding: 'utf8'
     }).trim();
+
+    if (url.includes('github.com')) {
+      return this.parsedGithubUrl(url);
+    } else {
+      return this.parsedGithubEnterpriseUrl(url);
+    }
+  }
+
+  parsedGithubUrl(url) {
+    const parsedUrl = parse(url);
+
+    (this.owner = parsedUrl[0]), (this.repo = parsedUrl[1]);
+  }
+
+  parsedGithubEnterpriseUrl(url) {
+    const splitUrl = url.split(':');
+    const splitRepo = splitUrl.split('/');
+    (this.owner = splitRepo[0]), (this.repo = splitRepo[1]), (this.hostname = splitUrl[0]);
   }
 
   fetch(id) {
@@ -45,7 +62,11 @@ class Pullit {
 
   display() {
     this.fetchRequests().then(results => {
-      const menu = Menu({ width: 100, x: 4, y: 2 });
+      const menu = Menu({
+        width: 100,
+        x: 4,
+        y: 2
+      });
       menu.reset();
       menu.write('Currently open pull requests:\n');
       menu.write('-------------------------\n');
