@@ -34,7 +34,7 @@ class Pullit {
 
   parsedGithubEnterpriseUrl(url) {
     const splitUrl = url.split(':');
-    const splitRepo = splitUrl.split('/');
+    const splitRepo = splitUrl[1].split('/');
     (this.owner = splitRepo[0]), (this.repo = splitRepo[1]), (this.hostname = splitUrl[0]);
   }
 
