@@ -8,10 +8,7 @@ const parse = require('parse-github-repo-url');
 class Pullit {
   constructor() {
     this.init();
-    this.hostname = 'api.github.com';
-    this.github = new GitHubApi({
-      hostname: this.hostname
-    });
+    this.github = new GitHubApi({});
   }
 
   init() {
@@ -19,23 +16,13 @@ class Pullit {
       encoding: 'utf8'
     }).trim();
 
-    if (url.includes('github.com')) {
-      return this.parsedGithubUrl(url);
-    } else {
-      return this.parsedGithubEnterpriseUrl(url);
-    }
+    return this.parsedGithubUrl(url);
   }
 
   parsedGithubUrl(url) {
     const parsedUrl = parse(url);
 
     (this.owner = parsedUrl[0]), (this.repo = parsedUrl[1]);
-  }
-
-  parsedGithubEnterpriseUrl(url) {
-    const splitUrl = url.split(':');
-    const splitRepo = splitUrl[1].split('/');
-    (this.owner = splitRepo[0]), (this.repo = splitRepo[1]), (this.hostname = splitUrl[0]);
   }
 
   fetch(id) {
