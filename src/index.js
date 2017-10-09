@@ -37,6 +37,9 @@ class Pullit {
         execSync(
           `git fetch origin pull/${id}/head:${branch} && git checkout ${branch}`
         );
+      })
+      .catch(err => {
+        console.log('Error: Could not find the specified pull request.');
       });
   }
 
@@ -75,6 +78,8 @@ class Pullit {
         process.stdin.setRawMode(false);
         process.stdin.end();
       });
+    }).catch(err => {
+      console.log('Error: could not display pull requests. Please make sure this is a valid repository.')
     });
   }
 }
