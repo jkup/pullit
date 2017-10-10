@@ -53,8 +53,8 @@ class Pullit {
   display() {
     this.fetchRequests().then(results => {
       const menu = Menu({
-        width: 100,
-        x: 4,
+       width: process.stdout.columns - 4,
+        x: 0,
         y: 2
       });
       menu.reset();
