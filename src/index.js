@@ -4,15 +4,17 @@ const {
   execSync
 } = require('child_process');
 const parse = require('parse-github-repo-url');
+const yargs = require('yargs').argv;
 
 class Pullit {
   constructor() {
+    this.remote = yargs.remote || 'origin';
     this.init();
     this.github = new GitHubApi({});
   }
 
   init() {
-    const url = execSync(`git config --get remote.origin.url`, {
+    const url = execSync(`git config --get remote.${this.remote}.url`, {
       encoding: 'utf8'
     }).trim();
 
@@ -35,7 +37,7 @@ class Pullit {
       .then(res => {
         const branch = res.data.head.ref;
         execSync(
-          `git fetch origin pull/${id}/head:${branch} && git checkout ${branch}`
+          `git fetch ${this.remote} pull/${id}/head:${branch} && git checkout ${branch}`
         );
       })
       .catch(err => {

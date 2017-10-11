@@ -35,7 +35,8 @@
   "dependencies": {
     "github": "^11.0.0",
     "parse-github-repo-url": "^1.4.1",
-    "terminal-menu": "^2.1.1"
+    "terminal-menu": "^2.1.1",
+    "yargs": "^9.0.1"
   },
   "jest": {
     "collectCoverageFrom": [
