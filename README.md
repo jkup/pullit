@@ -27,3 +27,17 @@ pullit
 ![screen shot 2017-09-17 at 9 43 22 pm](https://user-images.githubusercontent.com/490294/30529394-c4dce642-9bf1-11e7-877e-cfbc11b9fe6a.png)
 
 Then simply select a branch to fetch it down and check it out.
+
+### Options
+
+#### `--remote`
+
+Usage
+
+```
+pullit --remote other-remote-name
+
+# or
+
+pullit --remote=other-remote-name
+```
