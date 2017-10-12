@@ -62,7 +62,7 @@ class Pullit {
       menu.write('-------------------------\n');
 
       results.data.forEach(element => {
-        menu.add(`${element.number} - ${element.title}`);
+        menu.add(`${element.number} - ${element.title} - ${element.head.user.login}`);
       });
 
       menu.add(`Exit`);
