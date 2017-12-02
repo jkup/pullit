@@ -33,7 +33,7 @@ class Pullit {
         number: id
       })
       .then(res => {
-        const branch = res.data.head.ref;
+        const branch = `pullit/$res.data.head.ref}`;
         execSync(
           `git fetch origin pull/${id}/head:${branch} && git checkout ${branch}`
         );
