@@ -6,8 +6,8 @@ Display and pull branches from GitHub pull requests.
 
 ## Installation
 
-```
-npm install -g pullit
+```bash
+$ npm install -g pullit
 ```
 
 or
