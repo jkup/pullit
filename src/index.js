@@ -6,7 +6,7 @@ const parse = require("parse-github-repo-url");
 class Pullit {
   constructor() {
     this.init();
-    this.octokit = new Ocktokit({});
+    this.octokit = new Ocktokit();
   }
 
   init() {
@@ -28,7 +28,7 @@ class Pullit {
       .get({
         owner: this.owner,
         repo: this.repo,
-        number: id
+        pull_number: id
       })
       .then(res => {
         const branch = res.data.head.ref;
