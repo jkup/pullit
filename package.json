@@ -33,7 +33,7 @@
     "proxyquire": "^2.1.0"
   },
   "dependencies": {
-    "github": "^14.0.0",
+    "@octokit/rest": "^16.28.9",
     "parse-github-repo-url": "^1.4.1",
     "terminal-menu": "^2.1.1"
   },

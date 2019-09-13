@@ -1,4 +1,4 @@
-const GitHubApi = require("github");
+const Ocktokit = require("@octokit/rest");
 const Menu = require("terminal-menu");
 const { execFileSync } = require("child_process");
 const parse = require("parse-github-repo-url");
@@ -6,7 +6,7 @@ const parse = require("parse-github-repo-url");
 class Pullit {
   constructor() {
     this.init();
-    this.github = new GitHubApi({});
+    this.octokit = new Ocktokit();
   }
 
   init() {
@@ -24,11 +24,11 @@ class Pullit {
   }
 
   fetch(id) {
-    return this.github.pullRequests
+    return this.octokit.pulls
       .get({
         owner: this.owner,
         repo: this.repo,
-        number: id
+        pull_number: id
       })
       .then(res => {
         const branch = res.data.head.ref;
@@ -41,7 +41,7 @@ class Pullit {
   }
 
   fetchRequests() {
-    return this.github.pullRequests.getAll({
+    return this.octokit.pulls.list({
       owner: this.owner,
       repo: this.repo
     });
